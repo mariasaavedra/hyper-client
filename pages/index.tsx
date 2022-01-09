@@ -44,15 +44,14 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <div>
+      {/* <div>
           <div
             className={ styles.actions +" container flex justify-end invisible md:visible lg:visible xl:visible sm:visible"} >
             <Button onClick={toggleModal} priority="outline">
               Submit Content
             </Button>
           </div>
-
-      </div>
+      </div> */}
         {showModal && (
           <Modal confirmLabel="Submit" handleClose={toggleModal}>
             <>
