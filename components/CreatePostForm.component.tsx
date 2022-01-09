@@ -27,7 +27,7 @@ export default function CreatePostForm(props: CreatePostForm) {
       <form onSubmit={handleSubmit} className="w-full mt-4 mx-auto">
         <div className="flex items-center border-2 rounded border-black py-2">
           <input
-            className="appearance-none w-100 bg-transparent block  border-none w-100 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            className="appearance-none w-full bg-transparent block  border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
             type="text"
             placeholder="Title"
             aria-label="Title"
@@ -35,7 +35,7 @@ export default function CreatePostForm(props: CreatePostForm) {
         </div>
         <div className="mt-4 flex items-center border-2 rounded border-black py-2">
         <input
-            className="appearance-none w-100 bg-transparent block  border-none w-100 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            className="appearance-none w-full bg-transparent block  border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
             type="text"
             placeholder="URL"
             aria-label="URL"
@@ -43,7 +43,7 @@ export default function CreatePostForm(props: CreatePostForm) {
         </div>
         <div className="mt-4 flex items-center border-2 rounded border-black py-2">
           <textarea
-            className="appearance-none w-100 bg-transparent border-none block w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+            className="appearance-none w-full bg-transparent border-none block w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
             placeholder="Description"
             aria-label="Description"
           />

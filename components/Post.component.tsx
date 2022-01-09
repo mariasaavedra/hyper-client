@@ -165,7 +165,7 @@ export default function Post(props: PostProps) {
                 onChange={(e) => {
                   setTitle(e.target.value);
                 }}
-                className="mt-2 bg-white block p-2 w-100 text-black font-medium text-sm"
+                className="mt-2 bg-white block p-2 w-full text-black font-medium text-sm"
               />
             </div>
             <div className="formGroup">
@@ -178,7 +178,7 @@ export default function Post(props: PostProps) {
                 onChange={(e) => {
                   setUrl(e.target.value);
                 }}
-                className="mt-2 bg-white block p-2 w-100 text-black font-medium text-sm"
+                className="mt-2 bg-white block p-2 w-full text-black font-medium text-sm"
               />
             </div>
             <div className="formGroup">
@@ -191,7 +191,7 @@ export default function Post(props: PostProps) {
                 onChange={(e) => {
                   setContent(e.target.value);
                 }}
-                className="mt-2 bg-white block p-2 w-100 text-black font-medium text-sm"
+                className="mt-2 bg-white block p-2 w-full text-black font-medium text-sm"
               />
             </div>
           </div>
