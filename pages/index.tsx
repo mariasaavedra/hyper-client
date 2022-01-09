@@ -61,7 +61,7 @@ const Home: NextPage = () => {
             </>
           </Modal>
         )}
-        <div className="mt-4 grid lg:grid-cols-3 sm:grid-cols-1 sm:gap-1 gap-4">
+        <div className="m-4 grid lg:grid-cols-3 sm:grid-cols-1 sm:gap-1 gap-4">
           <PostList></PostList>
         </div>
     </Layout>
