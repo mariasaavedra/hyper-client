@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 
 interface ButtonProps {
   url?: string;
+  display?: string;
   onClick?: Function;
   priority: "default" | "outline";
   children?: string | JSX.Element;
@@ -49,7 +50,7 @@ export default function Button(props: ButtonProps) {
       {props.priority === "default" && (
         <button
           onClick={hasCallback() ? (e) => handleClick(e) : () => {}}
-          className="mx-1 inline-block bg-neon border-2 border-solid  border-black hover:bg-black hover:text-white text-black font-bold py-2 px-4 rounded"
+        className={props.display + " mx-1 bg-neon border-2 border-solid  border-black hover:bg-black hover:text-white text-black font-bold py-2 px-4 rounded"}
         >
           {props.children}
         </button>
@@ -57,7 +58,7 @@ export default function Button(props: ButtonProps) {
       {props.priority === "outline" && (
         <button
           onClick={hasCallback() ? (e) => handleClick(e) : () => {}}
-          className="mx-1 inline-block bg-transparent border-2 border-solid border-slate-800 text-black font-bold py-2 px-4 rounded"
+          className={props.display + " mx-1 bg-transparent border-2 border-solid border-slate-800 text-black font-bold py-2 px-4 rounded"}
         >
           {props.children}
         </button>
@@ -69,4 +70,5 @@ export default function Button(props: ButtonProps) {
 Button.defaultProps = {
   priority: "default",
   type: "button",
+  dislplay: 'inline-block'
 };
