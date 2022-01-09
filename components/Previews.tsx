@@ -33,7 +33,7 @@ const img = {
 };
 
 function Previews() {
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState<any>([]);
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {
@@ -47,8 +47,8 @@ function Previews() {
     },
   });
 
-  const thumbs = files.map((file) => (
-    <div style={thumb} key={file.name}>
+  const thumbs = files.map((file: any) => (
+    <div key={file.name}>
       <div style={thumbInner}>
         <img src={file.preview} style={img} />
       </div>
