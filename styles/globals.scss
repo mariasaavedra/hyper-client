@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+@import '@fortawesome/fontawesome-free//css/all.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.drawer-open,
+body.drawer-open {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.bg-neon {
+  background: #ccff00;
+}
+
+.Toastify__toast-body {
+  text-align: left;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Nexa-Trial', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

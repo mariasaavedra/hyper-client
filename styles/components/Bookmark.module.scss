@@ -1,0 +1,34 @@
+
+.BookmarkComponent {
+  cursor: pointer;
+  .meta {
+    color: #fff;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+  .admin {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    i {
+      margin: 4px 8px;
+    }
+  }
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: relative;
+    background: rgba(0,0,0,0.5);
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+}

@@ -1,0 +1,13 @@
+.ModalComponent {
+    z-index: 9999;
+    .dialog {
+        position: relative;
+        min-width: 600px;
+    }
+    .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1rem;  
+    }
+}
