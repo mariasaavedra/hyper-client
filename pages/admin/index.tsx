@@ -31,9 +31,9 @@ interface BookmarksResponse {
 
 const AdminPage: NextPage = () => {
   const [showModal, setShowModal] = useState(false);
-  const [title, setTitle] = useState();
-  const [url, setUrl] = useState();
-  const [content, setContent] = useState();
+  const [title, setTitle] = useState('');
+  const [url, setUrl] = useState('');
+  const [content, setContent] = useState('');
   const [files, setFiles] = useState<FileWithPath[]>([]);
   const [mediaURL, setMediaURL] = useState<string | null | undefined>();
 
