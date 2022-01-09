@@ -15,7 +15,7 @@ const Layout: NextPage<LayoutProps> = (props: LayoutProps) => {
           <title>Hyper Genius</title>
           <meta name="description" content="A garden of digial delights." />
         </Head>
-        <main className="container mx-auto">
+        <main className="container mx-auto pb-4">
           <Header/>
           {props.children}
         </main>

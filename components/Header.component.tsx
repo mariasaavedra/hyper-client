@@ -32,7 +32,7 @@ export default function Header() {
         </Link>
         <h3 className="mt-4 font-weight-700">A garden of digital delights.</h3>
       </div>
-      <div>
+      <div className="mr-4">
         <Button onClick={() => {
            getRandomPost();
         }} display="inline-flex">Random Post</Button>
