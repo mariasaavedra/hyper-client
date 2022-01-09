@@ -58,7 +58,7 @@ function Previews() {
   useEffect(
     () => () => {
       // Make sure to revoke the data uris to avoid memory leaks
-      files.forEach((file) => URL.revokeObjectURL(file.preview));
+      files.forEach((file: any) => URL.revokeObjectURL(file.preview));
     },
     [files]
   );
@@ -69,7 +69,7 @@ function Previews() {
         <input {...getInputProps()} />
         <p>Drag 'n' drop some files here, or click to select files</p>
       </div>
-      <aside style={thumbsContainer}>{thumbs}</aside>
+      <aside>{thumbs}</aside>
     </section>
   );
 }
