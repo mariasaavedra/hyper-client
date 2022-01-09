@@ -1,4 +1,5 @@
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import BASE_URL from "../constants";
@@ -26,9 +27,9 @@ export default function Header() {
   return (
     <div className="flex items-center justify-between ml-4 mt-5 md:mt-5 lg:mt-10">
       <div>
-        <a href="#">
+        <Link href="/">
           <img width="150px" src="/images/logo-black.png"></img>
-        </a>
+        </Link>
         <h3 className="mt-4 font-weight-700">A garden of digital delights.</h3>
       </div>
       <div>
