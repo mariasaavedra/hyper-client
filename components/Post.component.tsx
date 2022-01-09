@@ -6,6 +6,7 @@ import Modal from "./Modal.component";
 import Drawer from "./Drawer.component";
 import Tag from "./Tag.component";
 import BASE_URL from '../constants'
+import { useRouter } from "next/router";
 
 interface PostAttributes {
   name: string;
@@ -34,6 +35,7 @@ interface PostProps {
 }
 
 export default function Post(props: PostProps) {
+  const router = useRouter();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [url, setUrl] = useState(props.url || `/posts/${props.id}`);
   const [title, setTitle] = useState(props.title || "");
@@ -47,13 +49,16 @@ export default function Post(props: PostProps) {
     setShowDeleteModal(!showDeleteModal);
     try {
       axios.delete(`${BASE_URL}/posts/${props.id}`).then(() => {
-        if (props.refetch) {
-          props.refetch();
-          toast.success("Deleted successfully", {
-            position: "bottom-right",
-            theme: "light",
-          });
-        }
+        toast.success("Deleted successfully", {
+          position: "bottom-right",
+          theme: "light",
+          autoClose: 1500,
+          hideProgressBar: true,
+          onClose: () => {
+             // todo: update this so re-fetching data instead of router.reload();
+            router.reload()
+          }
+        })
       });
     } catch (e) {
       toast.error(e as string, {
@@ -83,7 +88,7 @@ export default function Post(props: PostProps) {
           },
         })
         .then(() => {
-          if (props.refetchById) props.refetchById(id);
+          
         });
     } catch (e) {
       console.log(e);

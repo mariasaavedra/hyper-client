@@ -1,21 +1,18 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import styles from "../../styles/Admin.module.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Banner from "../../components/Banner.component";
-import Header from "../../components/Header.component";
 import Button from "../../components/Button.component";
 import Modal from "../../components/Modal.component";
-import CreatePostForm from "../../components/CreatePostForm.component";
-import Post from "../../components/Post.component";
 import PostList from "../../components/PostList.component";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PlaceholderItem from "../../components/PlaceholderItem";
-import Dropzone, { useDropzone, FileWithPath } from "react-dropzone";
+import Dropzone, {FileWithPath } from "react-dropzone";
 import Layout from "../../components/Layout.component";
 import BASE_URL from '../../constants'
+import { useRouter } from "next/router";
 
 interface Attributes {
   url: string;
@@ -36,7 +33,8 @@ const AdminPage: NextPage = () => {
   const [content, setContent] = useState('');
   const [files, setFiles] = useState<FileWithPath[]>([]);
   const [mediaURL, setMediaURL] = useState<string | null | undefined>();
-
+  const router = useRouter();
+  
   useEffect(() => {
     uploadMedia();
   }, [files]);
@@ -83,8 +81,19 @@ const AdminPage: NextPage = () => {
           },
         })
         .then((response) => {
-          console.log("response", response)
+          toast.success("Posted successfully", {
+            position: "bottom-right",
+            theme: "light",
+            autoClose: 1200,
+            hideProgressBar: true,
+            onClose: () => {
+              // todo: update this so re-fetching data instead of router.reload();
+              router.reload()
+            }
+          })
+
           setShowModal(!showModal);
+          console.log("response", response)
         });
     } catch (e) {
       console.log(e);
@@ -147,7 +156,7 @@ const AdminPage: NextPage = () => {
               <label className="mt-4 text-left ml-0 block">Title</label>
               <div className="flex items-center border-2 rounded border-black py-2">
                 <input
-                  className="appearance-none bg-transparent block  border-none w-100 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                  className="appearance-none bg-transparent block  border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                   type="text"
                   placeholder="Title"
                   aria-label="Title"
@@ -158,7 +167,7 @@ const AdminPage: NextPage = () => {
               <label className="mt-4 text-left ml-0 block">Url</label>
               <div className="flex items-center border-2 rounded border-black py-2">
                 <input
-                  className="appearance-none bg-transparent block  border-none w-100 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                  className="appearance-none bg-transparent block  border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
                   type="text"
                   placeholder="URL"
                   aria-label="URL"
