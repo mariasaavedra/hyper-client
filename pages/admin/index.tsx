@@ -55,8 +55,12 @@ const AdminPage: NextPage = () => {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then((res) => {
+        const UPLOAD_URL = process.env.NODE_ENV === 'development' ?
+        "http://api.digitalbytes.com:1337/": 
+        "https://hyper-genius-api.herokuapp.com/"
+
         console.log(res);
-        setMediaURL(`${BASE_URL}${res.data[0].url}`);
+        setMediaURL(`${UPLOAD_URL}${res.data[0].url}`);
       })
       .catch((err) => {
         console.log(err);
