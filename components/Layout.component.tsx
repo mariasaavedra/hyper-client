@@ -13,7 +13,7 @@ const Layout: NextPage<LayoutProps> = (props: LayoutProps) => {
       <div className={styles.container}>
         <Head>
           <title>Hyper Genius</title>
-          <meta name="description" content="A community bookmarking app" />
+          <meta name="description" content="A garden of digial delights." />
         </Head>
         <main className="container mx-auto">
           <Header/>
