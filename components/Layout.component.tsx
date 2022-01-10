@@ -14,15 +14,32 @@ const Layout: NextPage<LayoutProps> = (props: LayoutProps) => {
         <Head>
           <title>Hyper Genius</title>
           <meta name="description" content="A garden of digial delights." />
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          ></script>
         </Head>
         <main className="container mx-auto pb-4">
-          <Header/>
+          <Header />
           {props.children}
         </main>
       </div>
     </>
   );
-}
+};
 
-Layout.getInitialProps
+Layout.getInitialProps;
 export default Layout;
