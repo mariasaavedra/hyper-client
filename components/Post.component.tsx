@@ -141,9 +141,7 @@ export default function Post(props: PostProps) {
           <Drawer
             isOpen={true}
             handleClose={() => {
-              console.log("handle close", isEditMode);
               setIsEditMode(false);
-              console.log(isEditMode);
             }}
           >
             <div>

@@ -39,7 +39,6 @@ interface PostResponse {
 }
 
 export default function PostList(props: PostListProps) {
-  console.log("POST LIST", BASE_URL)
   const [posts, setPosts] = useState<Array<PostResponse>>([]);
   
   const refetch = () => {
@@ -50,7 +49,6 @@ export default function PostList(props: PostListProps) {
   
   const refetchById = (id: string | number) => {
     axios.get(`${BASE_URL}/posts/${id}`).then((response) => {
-      console.log("from ID", response)
       // a singuar bookmark.
       const data = response.data.data;
       const bookmark  = posts.find(b => b.id === id);

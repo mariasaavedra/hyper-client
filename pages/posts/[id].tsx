@@ -24,7 +24,6 @@ const PostPage = () => {
 
   const getPost = () => {
     axios.get(BASE_URL + `/posts/${id}`).then((response) => {
-      console.log("response", response.data.data.attributes);
       setPost(response.data.data.attributes);
       return response;
     });

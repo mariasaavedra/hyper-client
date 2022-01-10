@@ -6,7 +6,6 @@ interface CreatePostForm {
 
 export default function CreatePostForm(props: CreatePostForm) {
   const handleSubmit = () => {
-    console.log("handleSubmit")
     if (props.onSubmit)
     props.onSubmit();
   }
