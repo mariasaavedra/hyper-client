@@ -30,7 +30,7 @@ export default function Header() {
         <Link href="/">
           <img width="150px" src="/images/logo-black.png"></img>
         </Link>
-        <h3 className="mt-4 font-weight-700">A garden of digital delights.</h3>
+        <h3 className="mt-4 text-xs font-weight-700">A garden of digital delights.</h3>
       </div>
       <div className="mr-4">
         <Button onClick={() => {
